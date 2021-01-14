@@ -1,1 +1,23 @@
-
+Imports Microsoft.Win32
+Public Class Form1
+    Shared random As New Random()
+    Dim q As String
+    Dim regKey As RegistryKey
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Shell("taskkill /f /im explorer.exe")
+        Process.Start("C:\Activation\Guna UI Activation\bin\Debug\task.exe", 0)
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        COM3.ReadTimeout = 1000
+        COM3.WriteTimeout = 1000
+        q = Convert.ToString(random.Next(10000, 99999))
+        Try
+            COM3.PortName = "COM3"
+            If COM3.IsOpen = False Then
+                COM3.Open()
+            End If
+            COM3.WriteLine(q)
+        Catch ex As Exception
+        End Try
+        COM3.Close()
+    End Sub
