@@ -5,6 +5,7 @@ import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         task= findViewById(R.id.Task);
         shut = findViewById(R.id.shut);
         restart = findViewById(R.id.Restart);
+        Vibrator = (Vibrator)getSystemService(MainActivity.VIBRATOR_SERVICE);
         t=findViewById(R.id.value);
         pin.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -48,7 +50,37 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-       
+        shut.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Vibrator.vibrate(18);
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("shut");
+                myRef.setValue(1);
+            }
+        });
+
+
+        restart.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Vibrator.vibrate(18);
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("re");
+                myRef.setValue(1);
+            }
+        });
+
+
+        task.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Vibrator.vibrate(18);
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("task");
+                myRef.setValue(1);
+            }
+        });
 
     }
 }
