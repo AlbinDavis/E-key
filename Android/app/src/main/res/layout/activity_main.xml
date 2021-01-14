@@ -4,59 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ab"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/Restart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="132dp"
-        android:text="RESTART"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/shut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="12dp"
-
-        android:text="SHUTDOWN"
-        app:layout_constraintBottom_toTopOf="@+id/Task"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:id="@+id/pin"
+        android:layout_width="165dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/bg"
+        android:fontFamily="monospace"
+        android:text="PIN"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/shut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/Task"
-        android:layout_width="123dp"
-        android:layout_height="54dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="12dp"
-
+        android:layout_width="165dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="88dp"
+        android:background="@drawable/bg"
+        android:fontFamily="monospace"
         android:text="TASK"
-        app:layout_constraintBottom_toTopOf="@+id/pin"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/pin"
-        android:layout_width="117dp"
-        android:layout_height="51dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/Restart"
+        android:layout_width="165dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg"
+        android:fontFamily="monospace"
+        android:text="RESTART"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/Task"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        android:text="PIN"
+    <Button
+        android:id="@+id/shut"
+        android:layout_width="165dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/bg"
+        android:fontFamily="monospace"
+        android:text="SHUTDOWN"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/Restart"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/value"
-        android:layout_width="161dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="100dp"
-        android:text="TextView"
+        android:layout_width="419dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:rotationY="2"
+        android:text="24561"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="70sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
