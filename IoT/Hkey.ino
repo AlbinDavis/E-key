@@ -6,8 +6,8 @@
 #include <FirebaseObject.h>   
 #include <ESP8266WiFi.h>  
 #include <FirebaseArduino.h>   
-#define FIREBASE_HOST "hkey-95494.firebaseio.com"  
-#define FIREBASE_AUTH "Y5HlsW2FYz8GTnX0QdAKoGAvAYUr7GHuKbRMUNjr"  
+#define FIREBASE_HOST "hostname"  
+#define FIREBASE_AUTH "id"  
 #define WIFI_SSID "ssid"  
 #define WIFI_PASSWORD "password"  
   
