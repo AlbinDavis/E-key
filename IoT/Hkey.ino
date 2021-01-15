@@ -39,5 +39,26 @@ void loop() {
     Firebase.setString("pin", str);
   }
   
+ str1=Firebase.getInt("task");
+ if(str1=="1"){
+    Serial.println(1);
+    delay(800);
+    Firebase.set("task",0);
+ }
+
+ 
+ str1=Firebase.getInt("shut");
+ if(str1=="1"){
+     Serial.println(2);
+     delay(800);
+     Firebase.set("shut",0);
+ }
+ 
+ str1=Firebase.getInt("re");
+ if(str1=="1"){
+     Serial.println(3);
+     delay(800);
+     Firebase.set("re",0);
+ }
 
 }  
