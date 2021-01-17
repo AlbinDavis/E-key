@@ -3,12 +3,13 @@ Public Class Form1
     Shared random As New Random()
     Dim q As String
     Dim regKey As RegistryKey
+    
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
         Shell("taskkill /f /im explorer.exe")
         Process.Start("C:\Activation\Guna UI Activation\bin\Debug\task.exe", 0)
         Timer2.Start()
     End Sub
+    
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         COM3.ReadTimeout = 1000
         COM3.WriteTimeout = 1000
@@ -23,14 +24,13 @@ Public Class Form1
         Catch ex As Exception
         End Try
         COM3.Close()
-        Timer2.Start()
+        Timer2.Start()   
     End Sub
-    Private Sub Form1_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
 
+    Private Sub Form1_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         If (e.CloseReason = CloseReason.UserClosing) Then
             e.Cancel = True
         End If
-
     End Sub
 
     Private Sub TextBox2_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TextBox2.KeyDown
@@ -42,7 +42,6 @@ Public Class Form1
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
         If TextBox2.Text = "" Then
             MessageBox.Show("You haven't entered any PIN. please enter the PIN.", "No PIN found", MessageBoxButtons.OK, MessageBoxIcon.Information)
         ElseIf TextBox2.Text = q Then
@@ -67,7 +66,7 @@ Public Class Form1
         COM3.ReadTimeout = 1000
         COM3.WriteTimeout = 1000
         Dim k As Integer = 0
-
+    
         Try
             COM3.PortName = "COM3"
             If COM3.IsOpen = False Then
@@ -86,8 +85,8 @@ Public Class Form1
         ElseIf k = 3 Then
             Process.Start("shutdown", "-r -t 00")
         End If
-
     End Sub
+
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         Dim t As Integer = 0
         Try
